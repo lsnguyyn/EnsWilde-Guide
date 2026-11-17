@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="theme-color" content="#f8f7f4">
+
+<title>EnsWilde Guide</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+  --bg:#f8f7f4;
+
+  --paper:#ffffff;
+
+  --ink:#222b36;
+
+  --muted:#858b91;
+
+  --line:#e9e7e1;
+
+  --navy:#273c53;
+
+  --accent:#a58a63;
+
+  --soft:#f0eee8;
+
+}
+
+* {
+
+  box-sizing:border-box;
+
+  margin:0;
+
+  padding:0;
+
+  font-style:normal !important;
+
+}
+
+html {
+
+  scroll-behavior:smooth;
+
+  scroll-padding-top:100px;
+
+}
+
+body {
+
+  background:var(--bg);
+
+  color:var(--ink);
+
+  font-family:'Be Vietnam Pro',sans-serif;
+
+  font-size:14px;
+
+  line-height:1.85;
+
+}
+
+a {
+
+  text-decoration:none;
+
+  color:inherit;
+
+}
+
+button {
+
+  font:inherit;
+
+}
+
+::selection {
+
+  background:#d9d0bf;
+
+  color:#222;
+
+}
+
+.container {
+
+  width:min(1080px,calc(100% - 48px));
+
+  margin:auto;
+
+}
+
+/* THANH TIẾN TRÌNH */
+
+.progress {
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  height:2px;
+
+  width:0;
+
+  background:var(--accent);
+
+  z-index:200;
+
+}
+
+/* HEADER */
+
+header {
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  right:0;
+
+  z-index:100;
+
+  background:rgba(248,247,244,.9);
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(0,0,0,.055);
+
+}
+
+.nav {
+
+  height:76px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+}
+
+.brand {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+}
+
+.brand-mark {
+
+  width:37px;
+
+  height:37px;
+
+  border:1px solid #c6b99f;
+
+  display:grid;
+
+  place-items:center;
+
+  color:var(--navy);
+
+  font-size:20px;
+
+  font-weight:600;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+}
+
+.brand-mark img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+.brand-name {
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:1.4px;
+
+}
+
+.brand-sub {
+
+  font-size:9px;
+
+  color:var(--muted);
+
+  letter-spacing:2px;
+
+}
+
+.nav-links {
+
+  display:flex;
+
+  gap:29px;
+
+  align-items:center;
+
+}
+
+.nav-links a {
+
+  font-size:11px;
+
+  color:#777e85;
+
+  transition:.25s;
+
+}
+
+.nav-links a:hover,
+
+.nav-links a.active {
+
+  color:var(--navy);
+
+}
+
+.nav-links .repo {
+
+  border:1px solid #dcd8ce;
+
+  padding:9px 16px;
+
+  color:var(--navy);
+
+}
+
+/* HERO */
+
+.hero {
+
+  padding:170px 0 100px;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+.hero:after {
+
+  content:"";
+
+  position:absolute;
+
+  right:-170px;
+
+  top:100px;
+
+  width:530px;
+
+  height:530px;
+
+  border:1px solid rgba(165,138,99,.12);
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+}
+
+.hero:before {
+
+  content:"";
+
+  position:absolute;
+
+  right:-80px;
+
+  top:190px;
+
+  width:350px;
+
+  height:350px;
+
+  border:1px solid rgba(165,138,99,.1);
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+}
+
+.hero-content {
+
+  position:relative;
+
+  z-index:1;
+
+}
+
+.kicker {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  font-size:10px;
+
+  letter-spacing:3px;
+
+  color:var(--accent);
+
+  font-weight:600;
+
+}
+
+.kicker:before {
+
+  content:"";
+
+  width:30px;
+
+  height:1px;
+
+  background:var(--accent);
+
+}
+
+.hero h1 {
+
+  font-family:'Be Vietnam Pro',sans-serif;
+
+  font-size:clamp(58px,9vw,100px);
+
+  line-height:1.2;
+
+  font-weight:600;
+
+  letter-spacing:-3px;
+
+  margin:30px 0 23px;
+
+}
+
+.hero h1 span {
+
+  color:var(--accent);
+
+  font-weight:600;
+
+}
+
+.hero-bottom {
+
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+}
+
+.hero-description {
+
+  max-width:460px;
+
+  font-size:13px;
+
+  color:var(--muted);
+
+  line-height:2.1;
+
+}
+
+.hero-index {
+
+  color:#b2aa9b;
+
+  font-size:13px;
+
+  letter-spacing:2px;
+
+}
+
+/* ĐƯỜNG NGĂN */
+
+.separator {
+
+  border:0;
+
+  border-top:1px solid var(--line);
+
+}
+
+/* BỐ CỤC */
+
+.main-layout {
+
+  display:grid;
+
+  grid-template-columns:215px minmax(0,1fr);
+
+  gap:80px;
+
+  padding:75px 0 110px;
+
+  align-items:start;
+
+}
+
+/* MỤC LỤC */
+
+.sidebar {
+
+  position:sticky;
+
+  top:110px;
+
+}
+
+.sidebar-heading {
+
+  font-size:9px;
+
+  letter-spacing:2.5px;
+
+  color:#aaa69d;
+
+  margin-bottom:25px;
+
+}
+
+.side-link {
+
+  display:flex;
+
+  gap:13px;
+
+  align-items:baseline;
+
+  padding:13px 0;
+
+  border-bottom:1px solid var(--line);
+
+  color:#92918a;
+
+  font-size:11px;
+
+  transition:.25s;
+
+}
+
+.side-link span {
+
+  color:#b2a184;
+
+  font-size:15px;
+
+  font-weight:500;
+
+}
+
+.side-link:hover,
+
+.side-link.active {
+
+  color:var(--navy);
+
+}
+
+.side-link.active span {
+
+  color:var(--accent);
+
+}
+
+/* NỘI DUNG */
+
+.guide-section {
+
+  scroll-margin-top:110px;
+
+  margin-bottom:100px;
+
+}
+
+.section-meta {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:17px;
+
+}
+
+.section-meta span:first-child {
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  color:var(--accent);
+
+  font-weight:600;
+
+}
+
+.section-meta span:last-child {
+
+  font-size:10px;
+
+  color:#b0ada5;
+
+}
+
+.section-title {
+
+  font-family:'Be Vietnam Pro',sans-serif;
+
+  font-weight:600;
+
+  font-size:40px;
+
+  letter-spacing:-1.2px;
+
+  line-height:1.4;
+
+}
+
+.section-description {
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  margin:12px 0 35px;
+
+}
+
+/* TỪNG BƯỚC */
+
+.steps {
+
+  border-top:1px solid var(--line);
+
+}
+
+.step {
+
+  display:grid;
+
+  grid-template-columns:65px 1fr;
+
+  gap:20px;
+
+  padding:25px 0;
+
+  border-bottom:1px solid var(--line);
+
+}
+
+.step-number {
+
+  font-size:24px;
+
+  line-height:1.4;
+
+  color:#b7a78d;
+
+  font-weight:500;
+
+}
+
+.step h3 {
+
+  font-size:13px;
+
+  font-weight:600;
+
+  margin-bottom:6px;
+
+}
+
+.step p {
+
+  font-size:12px;
+
+  color:var(--muted);
+
+  line-height:2;
+
+}
+
+.step strong {
+
+  color:var(--ink);
+
+  font-weight:600;
+
+}
+
+.step ul {
+
+  padding-left:18px;
+
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+}
+
+.step li {
+
+  margin:5px 0;
+
+}
+
+.path {
+
+  display:inline-block;
+
+  margin-top:9px;
+
+  padding:7px 11px;
+
+  background:var(--soft);
+
+  color:var(--navy);
+
+  font-size:11px;
+
+  border-left:2px solid var(--accent);
+
+}
+
+/* GHI CHÚ */
+
+.note {
+
+  margin-top:25px;
+
+  padding:20px 22px;
+
+  display:grid;
+
+  grid-template-columns:25px 1fr;
+
+  gap:12px;
+
+  background:var(--soft);
+
+  border:1px solid #e9e5da;
+
+}
+
+.note-icon {
+
+  color:var(--accent);
+
+  font-size:16px;
+
+}
+
+.note h4 {
+
+  font-size:11px;
+
+  margin-bottom:4px;
+
+}
+
+.note p {
+
+  font-size:11px;
+
+  color:#77766f;
+
+  line-height:2;
+
+}
+
+.note.warning {
+
+  background:#f7f0e9;
+
+  border-color:#eee1d4;
+
+}
+
+.note.warning .note-icon {
+
+  color:#ad7956;
+
+}
+
+/* KẾT THÚC */
+
+.end-mark {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-top:65px;
+
+  color:#b8ad98;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  font-weight:500;
+
+}
+
+.end-mark:before,
+
+.end-mark:after {
+
+  content:"";
+
+  height:1px;
+
+  background:var(--line);
+
+  flex:1;
+
+}
+
+/* FOOTER */
+
+footer {
+
+  border-top:1px solid var(--line);
+
+}
+
+.footer {
+
+  min-height:90px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+}
+
+.footer p {
+
+  font-size:10px;
+
+  color:var(--muted);
+
+}
+
+.footer a {
+
+  font-size:10px;
+
+  color:var(--navy);
+
+}
+
+/* HIỆU ỨNG CUỘN */
+
+.reveal {
+
+  opacity:0;
+
+  transform:translateY(20px);
+
+  transition:opacity .7s ease,transform .7s ease;
+
+}
+
+.reveal.show {
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px) {
+
+  .container {
+
+    width:calc(100% - 36px);
+
+  }
+
+  .nav {
+
+    height:66px;
+
+  }
+
+  .nav-links {
+
+    display:none;
+
+  }
+
+  .hero {
+
+    padding:140px 0 65px;
+
+  }
+
+  .hero h1 {
+
+    font-size:62px;
+
+    letter-spacing:-2px;
+
+  }
+
+  .hero:after {
+
+    right:-350px;
+
+  }
+
+  .hero:before {
+
+    right:-250px;
+
+  }
+
+  .hero-bottom {
+
+    align-items:flex-start;
+
+  }
+
+  .hero-index {
+
+    display:none;
+
+  }
+
+  .main-layout {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    padding-top:30px;
+
+  }
+
+  .sidebar {
+
+    position:sticky;
+
+    top:66px;
+
+    width:100%;
+
+    z-index:50;
+
+    display:flex;
+
+    overflow-x:auto;
+
+    background:rgba(248,247,244,.97);
+
+    gap:20px;
+
+    padding:12px 0;
+
+    scrollbar-width:none;
+
+  }
+
+  .sidebar::-webkit-scrollbar {
+
+    display:none;
+
+  }
+
+  .sidebar-heading {
+
+    display:none;
+
+  }
+
+  .side-link {
+
+    flex-shrink:0;
+
+    border:0;
+
+    padding:7px 0;
+
+    font-size:10px;
+
+    white-space:nowrap;
+
+  }
+
+  .side-link span {
+
+    font-size:12px;
+
+  }
+
+  .section-title {
+
+    font-size:33px;
+
+  }
+
+  .guide-section {
+
+    margin-bottom:75px;
+
+  }
+
+  .step {
+
+    grid-template-columns:43px 1fr;
+
+    gap:10px;
+
+  }
+
+  .step-number {
+
+    font-size:21px;
+
+  }
+
+  .footer {
+
+    padding:22px 0;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  html {
+
+    scroll-behavior:auto;
+
+  }
+
+  *,
+
+  *::before,
+
+  *::after {
+
+    transition:none !important;
+
+  }
+
+  .reveal {
+
+    opacity:1;
+
+    transform:none;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header>
+
+  <div class="container nav">
+
+    <a href="#" class="brand">
+
+      <div class="brand-mark"><img src="https://raw.githubusercontent.com/nguyenls3005-cell/EnsWilde/refs/heads/main/MyApp_Dark_1024.png" alt="EnsWilde Icon"></div>
+
+      <div>
+
+        <div class="brand-name">ENSWILDE</div>
+
+        <div class="brand-sub">HƯỚNG DẪN SỬ DỤNG</div>
+
+      </div>
+
+    </a>
+
+    <nav class="nav-links">
+
+      <a href="#pairing">Ghép nối</a>
+
+      <a href="#passcode">Passcode</a>
+
+      <a href="#mobilegestalt">MobileGestalt</a>
+
+      <a href="https://github.com/nguyenls3005-cell/EnsWilde" target="_blank" rel="noopener" class="repo">Mã nguồn ↗</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<!-- TRANG ĐẦU -->
+
+<section class="hero">
+
+  <div class="container hero-content">
+
+    <div class="kicker reveal">
+
+      HƯỚNG DẪN SỬ DỤNG ENSWILDE
+
+    </div>
+
+    <h1 class="reveal">
+
+      Sử dụng<br>
+
+      <span>EnsWilde.</span>
+
+    </h1>
+
+    <div class="hero-bottom reveal">
+
+      <p class="hero-description">
+
+        Hướng dẫn chi tiết từng bước để ghép nối thiết bị,
+
+        thay đổi giao diện Passcode và tùy chỉnh MobileGestalt.
+
+        Mọi thao tác được trình bày rõ ràng, dễ thực hiện.
+
+      </p>
+
+      <div class="hero-index">01 — 03</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<hr class="separator">
+
+<main class="container main-layout">
+
+  <!-- MỤC LỤC -->
+
+  <aside class="sidebar">
+
+    <div class="sidebar-heading">MỤC LỤC</div>
+
+    <a href="#pairing" class="side-link active">
+
+      <span>01</span> Ghép nối thiết bị
+
+    </a>
+
+    <a href="#passcode" class="side-link">
+
+      <span>02</span> Thay ảnh Passcode
+
+    </a>
+
+    <a href="#mobilegestalt" class="side-link">
+
+      <span>03</span> MobileGestalt
+
+    </a>
+
+  </aside>
+
+  <div class="content">
+
+    <!-- PHẦN 01 -->
+
+    <section class="guide-section" id="pairing">
+
+      <div class="section-meta reveal">
+
+        <span>HƯỚNG DẪN 01</span>
+
+        <span>THIẾT LẬP THIẾT BỊ</span>
+
+      </div>
+
+      <h2 class="section-title reveal">Ghép nối thiết bị</h2>
+
+      <p class="section-description reveal">
+
+        Thiết lập kết nối giữa EnsWilde và thiết bị của bạn.
+
+      </p>
+
+      <div class="steps">
+
+        <div class="step reveal">
+
+          <div class="step-number">01</div>
+
+          <div>
+
+            <h3>Tải ứng dụng LocalDevVPN</h3>
+
+            <p>
+
+              Tải ứng dụng <strong>LocalDevVPN</strong>
+
+              từ App Store về máy.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">02</div>
+
+          <div>
+
+            <h3>Bắt đầu ghép nối trên iOS 27</h3>
+
+            <p>Mở EnsWilde và truy cập theo đường dẫn:</p>
+
+            <div class="path">
+
+              Cài đặt → Ghép nối trên thiết bị → Bắt đầu ghép nối
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">03</div>
+
+          <div>
+
+            <h3>Thoát ứng dụng EnsWilde</h3>
+
+            <p>
+
+              Quay về màn hình chính nhưng
+
+              <strong>KHÔNG TẮT ỨNG DỤNG</strong>.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">04</div>
+
+          <div>
+
+            <h3>Mở phần Chế độ nhà phát triển</h3>
+
+            <p>
+
+              Vào Cài đặt → Quyền riêng tư & Bảo mật
+
+              → Chế độ nhà phát triển.
+
+              Tìm tùy chọn Pair With EnsWilde nếu được cung cấp.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">05</div>
+
+          <div>
+
+            <h3>Hoàn tất ghép nối</h3>
+
+            <p>
+
+              Xác thực bằng mật khẩu thiết bị khi được yêu cầu,
+
+              đối chiếu mã PIN và xác nhận ghép nối.
+
+              Sau đó quay lại EnsWilde và nhấn <strong>Đóng</strong>.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="note reveal">
+
+        <div class="note-icon">ⓘ</div>
+
+        <div>
+
+          <h4>Đối với iOS 26</h4>
+
+          <p>
+
+            Thực hiện ghép nối thông qua máy tính.
+
+            Các công cụ được đề cập gồm idevice pairing và iloader.
+
+            Sau khi lấy pairing file, sử dụng tệp theo yêu cầu của EnsWilde.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="end-mark reveal">HẾT PHẦN 01</div>
+
+    </section>
+
+    <!-- PHẦN 02 -->
+
+    <section class="guide-section" id="passcode">
+
+      <div class="section-meta reveal">
+
+        <span>HƯỚNG DẪN 02</span>
+
+        <span>TÙY CHỈNH GIAO DIỆN</span>
+
+      </div>
+
+      <h2 class="section-title reveal">Thay ảnh Passcode</h2>
+
+      <p class="section-description reveal">
+
+        Tải giao diện và thay đổi bàn phím số trên màn hình khóa.
+
+      </p>
+
+      <div class="steps">
+
+        <div class="step reveal">
+
+          <div class="step-number">01</div>
+
+          <div>
+
+            <h3>Mở Kho giao diện</h3>
+
+            <p>
+
+              Truy cập <strong>Theme Store</strong>,
+
+              chọn <strong>EnsWilde Repository</strong>
+
+              và nhấn <strong>Download</strong> để cài đặt giao diện.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">02</div>
+
+          <div>
+
+            <h3>Chọn giao diện Passcode</h3>
+
+            <p>
+
+              Quay lại trang chủ, mở <strong>Passcode Theme</strong>
+
+              và nhấn nút tròn bên cạnh giao diện muốn sử dụng.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">03</div>
+
+          <div>
+
+            <h3>Điều chỉnh kích thước</h3>
+
+            <p>Nhấn vào giao diện để tùy chỉnh:</p>
+
+            <ul>
+
+              <li><strong>Small Keys:</strong> Phím nhỏ.</li>
+
+              <li><strong>Big Keys:</strong> Phím lớn.</li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">04</div>
+
+          <div>
+
+            <h3>Lưu thay đổi</h3>
+
+            <p>
+
+              Quay lại và nhấn <strong>Save Changes</strong>.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">05</div>
+
+          <div>
+
+            <h3>Áp dụng giao diện</h3>
+
+            <p>
+
+              Truy cập trang <strong>Apply</strong>,
+
+              nhấn <strong>Apply Enabled Tweaks</strong>
+
+              và chờ quá trình hoàn tất.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="note warning reveal">
+
+        <div class="note-icon">!</div>
+
+        <div>
+
+          <h4>Lưu ý trước khi áp dụng</h4>
+
+          <p>
+
+            Cần có pairing file hợp lệ và kết nối LocalDevVPN
+
+            theo yêu cầu của ứng dụng.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="end-mark reveal">HẾT PHẦN 02</div>
+
+    </section>
+
+    <!-- PHẦN 03 -->
+
+    <section class="guide-section" id="mobilegestalt">
+
+      <div class="section-meta reveal">
+
+        <span>HƯỚNG DẪN 03</span>
+
+        <span>TÙY CHỈNH HỆ THỐNG</span>
+
+      </div>
+
+      <h2 class="section-title reveal">MobileGestalt</h2>
+
+      <p class="section-description reveal">
+
+        Thực hiện các tinh chỉnh MobileGestalt được hỗ trợ.
+
+      </p>
+
+      <div class="note reveal">
+
+        <div class="note-icon">ⓘ</div>
+
+        <div>
+
+          <h4>Điều kiện sử dụng</h4>
+
+          <p>
+
+            Phương thức Worse_query sử dụng App Groups.
+
+            Chứng chỉ phải hỗ trợ App Groups thì mới có thể
+
+            sử dụng tính năng này.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="steps" style="margin-top:25px">
+
+        <div class="step reveal">
+
+          <div class="step-number">01</div>
+
+          <div>
+
+            <h3>Mở MobileGestalt</h3>
+
+            <p>
+
+              Truy cập trang <strong>MobileGestalt</strong>
+
+              trong EnsWilde.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">02</div>
+
+          <div>
+
+            <h3>Bật tinh chỉnh</h3>
+
+            <p>
+
+              Kích hoạt tính năng tinh chỉnh và chọn tweak mong muốn.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">03</div>
+
+          <div>
+
+            <h3>Lưu cài đặt</h3>
+
+            <p>
+
+              Nhấn <strong>Save Changes</strong>
+
+              để lưu các thiết lập vừa chọn.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">04</div>
+
+          <div>
+
+            <h3>Áp dụng thay đổi</h3>
+
+            <p>
+
+              Chuyển sang trang <strong>Apply</strong>
+
+              và nhấn <strong>Apply Enabled Tweaks</strong>.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">05</div>
+
+          <div>
+
+            <h3>Chờ thiết bị Respring</h3>
+
+            <p>
+
+              Đợi quá trình thực hiện hoàn tất
+
+              và thiết bị Respring.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="end-mark reveal">HOÀN TẤT HƯỚNG DẪN</div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+
+  <div class="container footer">
+
+    <p>ENSWILDE · HƯỚNG DẪN SỬ DỤNG</p>
+
+    <p>Được thiết kế để dễ dàng sử dụng.</p>
+
+    <a href="https://github.com/nguyenls3005-cell/EnsWilde"
+
+       target="_blank" rel="noopener">
+
+      MÃ NGUỒN ↗
+
+    </a>
+
+  </div>
+
+</footer>
+
+<script>
+
+// Hiệu ứng xuất hiện khi cuộn
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add('show');
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+}, {
+
+  threshold:0.12
+
+});
+
+document.querySelectorAll('.reveal').forEach(el => {
+
+  observer.observe(el);
+
+});
+
+// Thanh tiến trình cuộn
+
+window.addEventListener('scroll', () => {
+
+  const total =
+
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  const progress = total > 0
+
+    ? window.scrollY / total * 100
+
+    : 0;
+
+  document.getElementById('progress').style.width =
+
+    progress + '%';
+
+}, {
+
+  passive:true
+
+});
+
+// Tự động đánh dấu mục lục
+
+const sections = document.querySelectorAll('.guide-section');
+
+const links = document.querySelectorAll('.side-link');
+
+const activeObserver = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      links.forEach(link => {
+
+        link.classList.toggle(
+
+          'active',
+
+          link.getAttribute('href') === '#' + entry.target.id
+
+        );
+
+      });
+
+    }
+
+  });
+
+}, {
+
+  rootMargin:'-20% 0px -65% 0px'
+
+});
+
+sections.forEach(section => {
+
+  activeObserver.observe(section);
+
+});
+
+</script>
+
+</body>
+
+</html>
